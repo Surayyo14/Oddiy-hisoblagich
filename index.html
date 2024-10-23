@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Oddiy hisoblagich</title>
+    <style>
+        input[type="button"] {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+        }
+        #ekran {
+            width: 210px;
+            height: 50px;
+            font-size: 20px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="4"><input type="text" id="ekran"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="bos(1)"></td>
+            <td><input type="button" value="2" onclick="bos(2)"></td>
+            <td><input type="button" value="3" onclick="bos(3)"></td>
+            <td><input type="button" value="+" onclick="bos('+')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="bos(4)"></td>
+            <td><input type="button" value="5" onclick="bos(5)"></td>
+            <td><input type="button" value="6" onclick="bos(6)"></td>
+            <td><input type="button" value="-" onclick="bos('-')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="bos(7)"></td>
+            <td><input type="button" value="8" onclick="bos(8)"></td>
+            <td><input type="button" value="9" onclick="bos(9)"></td>
+            <td><input type="button" value="*" onclick="bos('*')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="C" onclick="tozalash()"></td>
+            <td><input type="button" value="0" onclick="bos(0)"></td>
+            <td><input type="button" value="=" onclick="hisobla()"></td>
+            <td><input type="button" value="/" onclick="bos('/')"></td>
+        </tr>
+    </table>
+
+    <script>
+        let ekran = document.getElementById('ekran');
+        let amal = "";
+
+        function bos(raqam) {
+            amal += raqam;
+            ekran.value = amal;
+        }
+
+        function tozalash() {
+            amal = "";
+            ekran.value = "";
+        }
+
+        function hisobla() {
+            ekran.value = eval(amal);
+            amal = ekran.value;
+        }
+    </script>
+</body>
+</html>
